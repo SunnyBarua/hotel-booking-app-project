@@ -51,7 +51,21 @@ const login=catchAsyncErrors(async(req,res)=>{
     })
 
 })
+
+const allUsers=async(req,res)=>{
+    const users=await User.find({})
+    res.json(users)
+}
+const deleteUser=async(req,res)=>{
+    const user=await User.findById(req.params.id)
+    if(user){
+        await user.remove()
+        res.json({message:"User removed"})
+    }else{
+        res.json({message:"User is not existed!"})
+    }
+}
 export {
-    register, login
+    register, login, allUsers, deleteUser
 }
 

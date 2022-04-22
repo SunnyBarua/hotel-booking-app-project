@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import Header from './components/Header';
 import NewHotel from './components/NewHotel';
 import PrivateRoute from "./components/PrivateRoute";
+import SearchResult from './components/SearchResult';
+import UsersList from './components/UsersList';
 import ViewHotel from './components/ViewHotel';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -60,6 +62,12 @@ function App() {
          <PrivateRoute exact path="/stripe/cancel">
            <StripeCancel/>
          </PrivateRoute>
+         <Route exact path="/search-result">
+           <SearchResult/>
+         </Route>
+         <Route exact path="/admin/userslist">
+           <UsersList/>
+         </Route>
        </Switch>
       <Footer/>
     </Router>

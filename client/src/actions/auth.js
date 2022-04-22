@@ -14,4 +14,9 @@ export const updateUserInLocalStorage=(user,next)=>{
 }
 
 
-
+export const allUsers = async (token) =>
+  await axios.get(`${process.env.REACT_APP_API}/user/all-user`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });

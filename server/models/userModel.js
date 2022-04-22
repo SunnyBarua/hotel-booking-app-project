@@ -19,6 +19,11 @@ const userSchema=new Schema({
         min:6,
         max:64
     },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default:false
+      },
     stripe_account_id:'',
     stripe_seller:{},
     stripeSession:{}

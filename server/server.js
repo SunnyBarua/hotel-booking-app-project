@@ -7,7 +7,6 @@ import { requireSignIn } from './middlewares/requireSignIn.js'
 import authRoutes from "./routes/authRoutes.js"
 import hotelRoutes from "./routes/hotelRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
-import roomRoutes from "./routes/roomRoutes.js"
 import stripeRoutes from "./routes/stripeRoutes.js"
 
 dotenv.config()
@@ -21,7 +20,7 @@ app.use(cors())
 app.get("/",(req,res)=>{
     res.send("API is Running!!!")
 })
-app.use("/api/room",roomRoutes)
+
 
 app.use("/api/user",authRoutes)
 app.use("/api/hotel",hotelRoutes)

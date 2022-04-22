@@ -38,7 +38,11 @@ const ViewHotel = () => {
       }
     }, []);
 
-
+  const handleClickForBooked=async(e)=>{
+    e.preventDefault()
+    alert("This Room is Already Booked ! So You can't book the same date !!");
+    
+  }
 
   const handleClick=async(e)=>{
     e.preventDefault()
@@ -132,40 +136,21 @@ const ViewHotel = () => {
             <span className="mr-2">To : </span>
               {moment(new Date(hotel.to)).format("MMMM Do YYYY, h:mm:ss a")}
             </p>
-           
-              <button onClick={handleClick} className="btn btn-block py-3 booking-btn" disabled={loading}>
+           {alreadyBooked ?(
+           <button onClick={handleClickForBooked} className="btn btn-block py-3 booking-btn" >  Already Booked
+           </button>):( 
+           <button onClick={handleClick} className="btn btn-block py-3 booking-btn" disabled={loading}>
                 {loading 
-                ? "Loading..." : alreadyBooked ?"Already Booked":
+                ? "Loading..." : 
+                
                 auth && auth.token 
                 ? "Book Now": 
-                "Login to Book"}</button>
+                "Login to Book"}</button>)
+           }
+              
             </div>
           </div>
         </div>
-
-        {/* <div className="reviews w-75">
-          <h3>Reviews:</h3>
-          <hr />
-          <div className="review-card my-3">
-            <div className="rating-outer">
-              <div className="rating-inner"></div>
-            </div>
-            <p className="review_user">by John</p>
-            <p className="review_comment">Good Quality</p>
-
-            <hr />
-          </div>
-
-          <div className="review-card my-3">
-            <div className="rating-outer">
-              <div className="rating-inner"></div>
-            </div>
-            <p className="review_user">by John</p>
-            <p className="review_comment">Good Quality</p>
-
-            <hr />
-          </div>
-        </div> */}
       </div>
     </>
   );
