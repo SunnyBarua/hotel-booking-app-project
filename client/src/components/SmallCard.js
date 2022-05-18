@@ -37,8 +37,7 @@ const SmallCard = ({hotel ,handleHotelDelete=(f)=>f,owner=false,showMoreButton=t
 
                         <p className="card-text">Available from {new Date(hotel.from).toLocaleDateString()}</p>
                         <div className="d-flex h4">
-                            {/* <button className="btn btn-primary" onClick={()=>history.push(`/hotel/${hotel._id}`)}>Show More</button> */}
-                           
+                            
                                <button className='edit_btn d-flex' onClick={()=>history.push(`/hotel/edit/${hotel._id}`)}>
                                <Link to={`/hotel/edit/${hotel._id}`}>
                                 <EditOutlined classID='text-warning' style={{ fontSize: '26px', color: '#fff' }}/> 

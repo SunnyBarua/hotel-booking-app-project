@@ -60,8 +60,8 @@ const Header = () => {
                </>
              )}
               
-              <Link className="nav-item nav-link" to="/privacy">
-                Privacy Policy
+              <Link className="nav-item nav-link" to="/register">
+                Register
               </Link>
             </div>
           </div>

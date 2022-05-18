@@ -6,4 +6,4 @@ export const userHotelBookingsOrder = async (req, res) => {
     res.json(all);
     console.log("Working!",all)
   };
-  
+

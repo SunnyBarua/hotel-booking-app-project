@@ -261,3 +261,33 @@ nav {
 .ant-select-selector {
   height: 50px !important;
 }
+.admin_hotel_view {
+  height: 100px;
+  width: 100px;
+}
+.all_card {
+  display: flex;
+  flex-direction: row;
+  margin: 0 5%;
+}
+.all_card > .card {
+  width: 33.33%;
+  margin-right: 10px;
+  height: 200px;
+  background-color: azure;
+}
+.all_card > .card > .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 28px;
+}
+.card_name {
+  font-size: 28px;
+  color: #222;
+}

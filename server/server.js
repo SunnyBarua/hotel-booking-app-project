@@ -4,6 +4,7 @@ import express from "express"
 import connectDB from './config/db.js'
 import { errorMiddleware, notFound } from "./middlewares/error.js"
 import { requireSignIn } from './middlewares/requireSignIn.js'
+import adminRoutes from "./routes/adminRoutes.js"
 import authRoutes from "./routes/authRoutes.js"
 import hotelRoutes from "./routes/hotelRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
@@ -26,6 +27,8 @@ app.use("/api/user",authRoutes)
 app.use("/api/hotel",hotelRoutes)
 app.use("/api/order",orderRoutes)
 app.use("/api/stripe",requireSignIn ,stripeRoutes)
+app.use("/api/admin",adminRoutes)
+
 
 app.all("*",notFound)
 app.use(errorMiddleware)

@@ -56,16 +56,40 @@ const allUsers=async(req,res)=>{
     const users=await User.find({})
     res.json(users)
 }
+
 const deleteUser=async(req,res)=>{
-    const user=await User.findById(req.params.id)
-    if(user){
-        await user.remove()
-        res.json({message:"User removed"})
-    }else{
-        res.json({message:"User is not existed!"})
-    }
+    console.log(req.params.userId);
+    let deletedUser=await User.findByIdAndDelete(req.params.userId).exec();
+    res.json(deletedUser);
 }
+
+const getUserProfile=catchAsyncErrors(async(req,res)=>{
+    
+    const user=await User.findById(req.user._id)
+    console.log("USER INFO",user)
+    if(user){
+        res.json({ 
+            _id:user._id,
+            name:user.name,
+            email:user.email,
+            isAdmin:user.isAdmin,
+            createdAt:user.createdAt,
+            updatedAt:user.updatedAt,
+            stripe_account_id:user.stripe_account_id,
+            stripe_seller:user.stripe_seller,
+            stripeSession:user.stripeSession
+        })
+
+    }
+
+    else{
+        res.status(404)
+        throw new Error('User not found!')
+    }
+    
+})
+
 export {
-    register, login, allUsers, deleteUser
+    register, login, allUsers, deleteUser, getUserProfile
 }
 

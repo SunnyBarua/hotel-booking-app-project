@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import AdminHotelList from './components/AdminHotelList';
+import AdminUserList from './components/AdminUserList';
 import EditHotel from './components/EditHotel';
 import Footer from "./components/Footer";
 import Header from './components/Header';
@@ -12,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import SearchResult from './components/SearchResult';
 import UsersList from './components/UsersList';
 import ViewHotel from './components/ViewHotel';
+import Admin from './pages/Admin';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -68,6 +71,17 @@ function App() {
          <Route exact path="/admin/userslist">
            <UsersList/>
          </Route>
+         <Route exact path="/admin-panel">
+           <Admin/>
+         </Route>
+         <Route exact path="/admin/hotel-list">
+           <AdminHotelList/>
+         </Route>
+         <Route exact path="/admin/user-list">
+           <AdminUserList/>
+         </Route>
+         
+         
        </Switch>
       <Footer/>
     </Router>

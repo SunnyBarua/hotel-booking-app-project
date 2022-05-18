@@ -59,3 +59,4 @@ export const userHotelBookings = async (token) =>
   });
 
   export const searchListings=async(query)=>await axios.post(`${process.env.REACT_APP_API}/hotel/search-listings`,query)
+

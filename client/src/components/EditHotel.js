@@ -96,7 +96,7 @@ const EditHotel = ({match}) => {
       </div>
       <div className="container add-hotel">
         <div className="row">
-          <div className="col-md-10">
+          <div className="col-md-12">
             <br />
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -212,10 +212,10 @@ const EditHotel = ({match}) => {
               </button>
             </form>
           </div>
-          <div className="col-md-2">
+          {/* <div className="col-md-2">
             <img src={preview} alt="preview_image" className="img img-fluid" />
             <pre>{JSON.stringify(to, null, 4)}</pre>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

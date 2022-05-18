@@ -20,3 +20,17 @@ export const allUsers = async (token) =>
       Authorization: `Bearer ${token}`,
     },
   });
+
+export const deleteUser=async(token,userId)=>await axios.delete(`${process.env.REACT_APP_API}/admin/delete-user/${userId}`,{
+    headers:{
+        Authorization:`Bearer ${token}`,
+    },
+});
+
+export const updateUser=async(token,data,userId)=>{
+  await axios.put(`${process.env.REACT_APP_API}/user/update-user/${userId}`,data,{
+      headers:{
+          Authorization:`Bearer ${token}`
+      },
+  });
+}
